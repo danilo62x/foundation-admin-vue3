@@ -1,0 +1,74 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+
+// Foundation base (prebuilt). Bundlers resolve this from node_modules.
+// react/vue3/laravel (Vite) + angular: this @import works with loadPaths=node_modules,
+// OR import the CSS in the JS/TS entry instead (e.g. import 'foundation-sites/dist/css/foundation.min.css').
+// html (sass CLI): use --load-path=node_modules.
+@import "foundation-sites/dist/css/foundation.min.css";
+
+// ===== Design tokens (verbatim from tailwind family) =====
+:root {
+  --color-brand-25:#f2f7ff; --color-brand-50:#ecf3ff; --color-brand-100:#dde9ff;
+  --color-brand-200:#c2d6ff; --color-brand-300:#9cb9ff; --color-brand-400:#7592ff;
+  --color-brand-500:#465fff; --color-brand-600:#3641f5; --color-brand-700:#2a31d8;
+  --color-brand-800:#252dae; --color-brand-900:#262e89; --color-brand-950:#161950;
+  --color-success-500:#12b76a; --color-warning-500:#f79009; --color-error-500:#f04438;
+  --color-blue-light-500:#0ba5ec;
+
+  --tx-sidebar-bg:#fff; --tx-sidebar-text:#475467; --tx-sidebar-text-active:#465fff;
+  --tx-sidebar-active-bg:#ecf3ff; --tx-sidebar-border:#e4e7ec;
+  --tx-body-bg:#f9fafb; --tx-card-bg:#fff; --tx-header-bg:#fff;
+  --tx-border:#e4e7ec; --tx-border-subtle:#f2f4f7;
+  --tx-text:#344054; --tx-text-heading:#101828; --tx-text-muted:#667085;
+
+  --shadow-theme-sm:0 1px 3px 0 rgba(16,24,40,.1),0 1px 2px 0 rgba(16,24,40,.06);
+  --shadow-theme-md:0 4px 8px -2px rgba(16,24,40,.1),0 2px 4px -2px rgba(16,24,40,.06);
+  --shadow-theme-lg:0 12px 16px -4px rgba(16,24,40,.08),0 4px 6px -2px rgba(16,24,40,.03);
+}
+:root.dark {
+  --tx-sidebar-bg:#1a2231; --tx-sidebar-text:#98a2b3; --tx-sidebar-text-active:#fff;
+  --tx-sidebar-active-bg:rgba(70,95,255,.15); --tx-sidebar-border:#1f2937;
+  --tx-body-bg:#101828; --tx-card-bg:#1a2231; --tx-header-bg:#1a2231;
+  --tx-border:#1f2937; --tx-border-subtle:#1d2939;
+  --tx-text:#d0d5dd; --tx-text-heading:#f9fafb; --tx-text-muted:#98a2b3;
+}
+
+html, body, #app { min-height:100%; margin:0; font-family:Outfit, ui-sans-serif, system-ui, sans-serif; }
+body { background:var(--tx-body-bg); color:var(--tx-text); -webkit-font-smoothing:antialiased; }
+// Foundation forces its own font/colors on body & headings — override:
+body, h1,h2,h3,h4,h5,h6, p, .button { font-family:Outfit, ui-sans-serif, system-ui, sans-serif; }
+
+// ===== Theme-aware surface utilities (verbatim) =====
+.surface-card   { background:var(--tx-card-bg);   border-color:var(--tx-border); }
+.surface-header { background:var(--tx-header-bg);  border-color:var(--tx-border); }
+.surface-sidebar{ background:var(--tx-sidebar-bg); border-color:var(--tx-sidebar-border); }
+.text-heading { color:var(--tx-text-heading) !important; }
+.text-body    { color:var(--tx-text) !important; }
+.text-muted-tx{ color:var(--tx-text-muted) !important; }
+.border-themed{ border-color:var(--tx-border) !important; }
+.shadow-theme-sm{ box-shadow:var(--shadow-theme-sm); }
+.shadow-theme-md{ box-shadow:var(--shadow-theme-md); }
+.shadow-theme-lg{ box-shadow:var(--shadow-theme-lg); }
+
+.is-sidebar-inactive{ color:var(--tx-sidebar-text); }
+.is-sidebar-inactive:hover{ background:var(--tx-sidebar-active-bg); color:var(--tx-sidebar-text-active); }
+.is-sidebar-active{ background:var(--tx-sidebar-active-bg); color:var(--tx-sidebar-text-active); }
+
+// brand helpers (Foundation primary is #1779ba — override to our brand)
+.text-brand{ color:var(--color-brand-500) !important; }
+.bg-brand{ background:var(--color-brand-500) !important; }
+.bg-brand-subtle{ background:var(--color-brand-50) !important; }
+.button.button-brand, .btn-brand{ background:var(--color-brand-500); color:#fff; border:0; }
+.button.button-brand:hover, .btn-brand:hover{ background:var(--color-brand-600); }
+
+.focus-ring:focus{ outline:none; box-shadow:0 0 0 4px rgba(70,95,255,.12); }
+.no-scrollbar::-webkit-scrollbar{ display:none; }
+.no-scrollbar{ -ms-overflow-style:none; scrollbar-width:none; }
+::-webkit-scrollbar{ width:8px; height:8px; }
+::-webkit-scrollbar-thumb{ background:#d0d5dd; border-radius:6px; }
+.dark ::-webkit-scrollbar-thumb{ background:#344054; }
+::selection{ background:var(--color-brand-500); color:#fff; }
+input[type=range]{ accent-color:var(--color-brand-500); }
+
+// ===== Compat layer (Tailwind-subset utilities the markup relies on) =====
+@import "./compat";

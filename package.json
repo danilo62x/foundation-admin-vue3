@@ -1,0 +1,38 @@
+{
+  "name": "vue3-foundation-admin-template",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@tanstack/vue-table": "^8.21.3",
+    "@tiptap/pm": "^3.23.6",
+    "@tiptap/starter-kit": "^3.23.6",
+    "@tiptap/vue-3": "^3.23.6",
+    "@vee-validate/yup": "^4.15.1",
+    "@vuepic/vue-datepicker": "^13.0.0",
+    "apexcharts": "^5.13.0",
+    "foundation-sites": "^6.8.1",
+    "pinia": "^3.0.1",
+    "pinia-plugin-persistedstate": "^4.2.0",
+    "vee-validate": "^4.15.1",
+    "vue": "^3.5.13",
+    "vue-i18n": "^11.4.2",
+    "vue-router": "^4.4.5",
+    "vue3-apexcharts": "^1.11.1",
+    "yup": "^1.7.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "@vitejs/plugin-vue": "^5.2.1",
+    "sass": "^1.80.0",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.7",
+    "vite-plugin-pwa": "^1.3.0",
+    "vue-tsc": "^2.2.0"
+  }
+}

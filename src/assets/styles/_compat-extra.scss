@@ -1,0 +1,309 @@
+/* ================================================================== */
+/* Extended compat blocks (semantic design-token vocabulary the        */
+/* tailwind-mirror markup relies on: brand/status color scales, title  */
+/* sizes, gradients, animations, transforms). Plain CSS — layered on    */
+/* top of Foundation so the markup stays a faithful 1:1 mirror.         */
+/* ================================================================== */
+
+/* ---- full brand/status/gray palette as CSS vars ---- */
+:root {
+  --c-brand-25:#f2f7ff; --c-brand-50:#ecf3ff; --c-brand-100:#dde9ff; --c-brand-200:#c2d6ff;
+  --c-brand-300:#9cb9ff; --c-brand-400:#7592ff; --c-brand-500:#465fff; --c-brand-600:#3641f5;
+  --c-brand-700:#2a31d8; --c-brand-800:#252dae; --c-brand-900:#262e89;
+  --c-gray-25:#fcfcfd; --c-gray-50:#f9fafb; --c-gray-100:#f2f4f7; --c-gray-200:#e4e7ec;
+  --c-gray-300:#d0d5dd; --c-gray-400:#98a2b3; --c-gray-500:#667085; --c-gray-600:#475467;
+  --c-gray-700:#344054; --c-gray-800:#1d2939; --c-gray-900:#101828; --c-gray-950:#0c111d;
+  --c-gray-dark:#1a2231;
+  --c-success-25:#f6fef9; --c-success-50:#ecfdf3; --c-success-100:#d1fadf; --c-success-200:#a6f4c5;
+  --c-success-300:#6ce9a6; --c-success-400:#32d583; --c-success-500:#12b76a; --c-success-600:#039855;
+  --c-success-700:#027a48; --c-success-800:#05603a;
+  --c-error-25:#fffbfa; --c-error-50:#fef3f2; --c-error-100:#fee4e2; --c-error-200:#fecdca;
+  --c-error-300:#fda29b; --c-error-400:#f97066; --c-error-500:#f04438; --c-error-600:#d92d20;
+  --c-error-700:#b42318; --c-error-800:#912018;
+  --c-warning-25:#fffcf5; --c-warning-50:#fffaeb; --c-warning-100:#fef0c7; --c-warning-200:#fedf89;
+  --c-warning-300:#fec84b; --c-warning-400:#fdb022; --c-warning-500:#f79009; --c-warning-600:#dc6803;
+  --c-warning-700:#b54708; --c-warning-800:#93370d;
+  --c-info-25:#f5fbff; --c-info-50:#f0f9ff; --c-info-100:#e0f2fe; --c-info-200:#b9e6fe;
+  --c-info-500:#0ba5ec; --c-info-600:#0086c9; --c-info-700:#026aa2;
+}
+
+/* ---- background color utilities ---- */
+.bg-brand-25{background:var(--c-brand-25)!important}.bg-brand-50{background:var(--color-brand-50)!important}
+.bg-brand-100{background:var(--color-brand-100)!important}.bg-brand-200{background:var(--c-brand-200)!important}
+.bg-brand-500{background:var(--color-brand-500)!important}.bg-brand-600{background:var(--color-brand-600)!important}
+.bg-brand-700{background:var(--color-brand-700)!important}
+.bg-success-50{background:var(--c-success-50)!important}.bg-success-100{background:var(--c-success-100)!important}
+.bg-success-500{background:var(--c-success-500)!important}.bg-success-600{background:var(--c-success-600)!important}
+.bg-warning-50{background:var(--c-warning-50)!important}.bg-warning-100{background:var(--c-warning-100)!important}
+.bg-warning-500{background:var(--c-warning-500)!important}.bg-warning-600{background:var(--c-warning-600)!important}
+.bg-error-50{background:var(--c-error-50)!important}.bg-error-100{background:var(--c-error-100)!important}
+.bg-error-500{background:var(--c-error-500)!important}.bg-error-600{background:var(--c-error-600)!important}
+.bg-blue-light-50{background:var(--c-info-50)!important}.bg-blue-light-500{background:var(--c-info-500)!important}
+.bg-blue-light-600{background:var(--c-info-600)!important}
+.bg-gray-50{background:var(--c-gray-50)!important}.bg-gray-100{background:var(--c-gray-100)!important}
+.bg-gray-200{background:var(--c-gray-200)!important}.bg-gray-500{background:var(--c-gray-500)!important}
+.bg-gray-700{background:var(--c-gray-700)!important}.bg-gray-800{background:var(--c-gray-800)!important}
+.bg-gray-900{background:var(--c-gray-900)!important}.bg-gray-950{background:var(--c-gray-950)!important}
+.bg-gray-dark{background:var(--c-gray-dark)!important}
+.bg-success-400{background:var(--c-success-400)!important}.bg-warning-400{background:var(--c-warning-400)!important}
+.bg-error-400{background:var(--c-error-400)!important}.bg-gray-300{background:var(--c-gray-300)!important}
+.bg-gray-400{background:var(--c-gray-400)!important}
+
+/* ---- text color utilities ---- */
+.text-brand-400{color:var(--c-brand-400)!important}.text-brand-500{color:var(--color-brand-500)!important}
+.text-brand-600{color:var(--color-brand-600)!important}.text-brand-700{color:var(--color-brand-700)!important}
+.text-success-500{color:var(--c-success-500)!important}.text-success-600{color:var(--c-success-600)!important}
+.text-success-700{color:var(--c-success-700)!important}.text-success-800{color:var(--c-success-800)!important}
+.text-warning-500{color:var(--c-warning-500)!important}.text-warning-600{color:var(--c-warning-600)!important}
+.text-warning-700{color:var(--c-warning-700)!important}.text-warning-800{color:var(--c-warning-800)!important}
+.text-error-500{color:var(--c-error-500)!important}.text-error-600{color:var(--c-error-600)!important}
+.text-error-700{color:var(--c-error-700)!important}.text-error-800{color:var(--c-error-800)!important}
+.text-blue-light-500{color:var(--c-info-500)!important}.text-blue-light-600{color:var(--c-info-600)!important}
+.text-blue-light-700{color:var(--c-info-700)!important}
+.text-gray-100{color:var(--c-gray-100)!important}.text-gray-300{color:var(--c-gray-300)!important}
+.text-gray-400{color:var(--c-gray-400)!important}.text-gray-500{color:var(--c-gray-500)!important}
+.text-gray-600{color:var(--c-gray-600)!important}.text-gray-700{color:var(--c-gray-700)!important}
+.text-white{color:#fff!important}
+/* markup uses Tailwind's .text-muted (theme muted token); Foundation has no such class */
+.text-muted{color:var(--tx-text-muted)!important}
+.text-muted-tx{color:var(--tx-text-muted)!important}
+
+/* ---- border color utilities ---- */
+.border-brand-200{border-color:var(--c-brand-200)!important}.border-brand-300{border-color:var(--c-brand-300)!important}
+.border-brand-500{border-color:var(--color-brand-500)!important}
+.border-success-200{border-color:var(--c-success-200)!important}.border-success-500{border-color:var(--c-success-500)!important}
+.border-warning-200{border-color:var(--c-warning-200)!important}.border-warning-500{border-color:var(--c-warning-500)!important}
+.border-error-200{border-color:var(--c-error-200)!important}.border-error-300{border-color:var(--c-error-300)!important}
+.border-error-500{border-color:var(--c-error-500)!important}
+.border-blue-light-200{border-color:var(--c-info-200)!important}
+.border-gray-300{border-color:var(--c-gray-300)!important}
+
+/* ---- title sizes (TailAdmin scale) ---- */
+.text-title-2xl{font-size:72px;line-height:90px}
+.text-title-xl{font-size:60px;line-height:72px}
+.text-title-lg{font-size:48px;line-height:60px}
+.text-title-md{font-size:36px;line-height:44px}
+.text-title-sm{font-size:30px;line-height:38px}
+.text-title-xs{font-size:24px;line-height:32px}
+.text-theme-xl{font-size:20px;line-height:30px}
+.text-theme-sm{font-size:14px;line-height:20px}
+.text-theme-xs{font-size:12px;line-height:18px}
+
+/* ---- gradient helpers used on auth / hero / cards ---- */
+.bg-auth-gradient{
+  background-image:linear-gradient(to bottom right,var(--color-brand-50),#fff,var(--color-brand-100));
+}
+.dark .bg-auth-gradient{
+  background-image:linear-gradient(to bottom right,#101828,var(--c-gray-dark),#101828);
+}
+.bg-card-gradient{ background-image:linear-gradient(to bottom right,var(--color-brand-600),var(--color-brand-700)); }
+.bg-bars-gradient{ background-image:linear-gradient(to top,var(--c-brand-200),var(--color-brand-500)); }
+
+/* spinner + pulse animations (no Tailwind runtime) */
+@keyframes tw-spin{to{transform:rotate(360deg)}}
+.animate-spin{animation:tw-spin 1s linear infinite}
+@keyframes tw-pulse{50%{opacity:.5}}
+.animate-pulse{animation:tw-pulse 2s cubic-bezier(.4,0,.6,1) infinite}
+@keyframes tw-ping{75%,100%{transform:scale(2);opacity:0}}
+.animate-ping{animation:tw-ping 1s cubic-bezier(0,0,.2,1) infinite}
+
+.tabular-nums{font-variant-numeric:tabular-nums}
+.shrink-0{flex-shrink:0}
+.line-through{text-decoration:line-through}
+.fill-current{fill:currentColor}
+.whitespace-pre-line{white-space:pre-line}
+.whitespace-nowrap{white-space:nowrap}
+.scroll-mt-20{scroll-margin-top:5rem}
+.scroll-mt-24{scroll-margin-top:6rem}
+
+/* ---- vertical/horizontal rhythm (Tailwind space-* / divide-*) ---- */
+.space-y-1>*+*{margin-top:.25rem}.space-y-1\.5>*+*{margin-top:.375rem}
+.space-y-2>*+*{margin-top:.5rem}.space-y-3>*+*{margin-top:.75rem}
+.space-y-4>*+*{margin-top:1rem}.space-y-5>*+*{margin-top:1.25rem}
+.space-y-6>*+*{margin-top:1.5rem}.space-y-8>*+*{margin-top:2rem}
+.space-y-10>*+*{margin-top:2.5rem}
+.space-x-2>*+*{margin-left:.5rem}
+.-space-x-2>*+*{margin-left:-.5rem}
+.-space-y-px>*+*{margin-top:-1px}
+.divide-themed>*+*{border-top:1px solid var(--tx-border)}
+.divide-y>*+*{border-top:1px solid var(--tx-border)}
+.divide-x>*+*{border-left:1px solid var(--tx-border)}
+
+/* transforms / text transforms / misc helpers */
+.transition,.transition-all,.transition-colors,.transition-opacity,.transition-transform{transition:all .2s ease}
+.transition-none{transition:none}
+.rotate-180{transform:rotate(180deg)}
+.rotate-90{transform:rotate(90deg)}
+.-rotate-90{transform:rotate(-90deg)}
+.rotate-45{transform:rotate(45deg)}
+.capitalize{text-transform:capitalize}
+.lowercase{text-transform:lowercase}
+.uppercase{text-transform:uppercase}
+.italic{font-style:italic}
+.not-italic{font-style:normal}
+.truncate{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.tracking-wide{letter-spacing:.025em}
+.tracking-wider{letter-spacing:.05em}
+.tracking-widest{letter-spacing:.1em}
+.leading-none{line-height:1}
+.leading-tight{line-height:1.25}
+.leading-relaxed{line-height:1.625}
+.appearance-none{appearance:none;-webkit-appearance:none}
+.cursor-pointer{cursor:pointer}.cursor-default{cursor:default}.cursor-not-allowed{cursor:not-allowed}.cursor-ew-resize{cursor:ew-resize}
+.pointer-events-none{pointer-events:none}.pointer-events-auto{pointer-events:auto}
+.select-none{user-select:none}
+.backdrop-blur,.backdrop-blur-sm{backdrop-filter:blur(8px)}
+.resize-none{resize:none}
+.object-cover{object-fit:cover}.object-contain{object-fit:contain}
+.list-disc{list-style:disc}.list-decimal{list-style:decimal}.list-none{list-style:none}
+.outline-none{outline:none}
+.underline{text-decoration:underline}
+.no-underline{text-decoration:none}
+
+/* color input swatch */
+input[type='color']{
+  -webkit-appearance:none;appearance:none;border:1px solid var(--tx-border);
+  border-radius:6px;cursor:pointer;padding:2px;background:transparent;
+}
+input[type='color']::-webkit-color-swatch-wrapper{padding:0}
+input[type='color']::-webkit-color-swatch{border:none;border-radius:4px}
+
+/* ---- gradient stops (subset used by markup) ---- */
+.bg-gradient-to-br{background-image:linear-gradient(to bottom right,var(--g-from,transparent),var(--g-via,var(--g-to,transparent)),var(--g-to,transparent))}
+.bg-gradient-to-t{background-image:linear-gradient(to top,var(--g-from,transparent),var(--g-to,transparent))}
+.bg-gradient-to-r{background-image:linear-gradient(to right,var(--g-from,transparent),var(--g-to,transparent))}
+.bg-gradient-to-b{background-image:linear-gradient(to bottom,var(--g-from,transparent),var(--g-to,transparent))}
+.from-brand-50{--g-from:#ecf3ff}.via-white{--g-via:#fff}.to-brand-100{--g-to:#dde9ff}
+.from-brand-200{--g-from:#c2d6ff}.from-brand-500\/40{--g-from:rgba(70,95,255,.4)}
+.from-brand-500{--g-from:var(--color-brand-500)}.via-brand-500{--g-via:var(--color-brand-500)}
+.from-brand-600{--g-from:var(--color-brand-600)}.to-brand-700{--g-to:var(--color-brand-700)}
+.to-brand-600{--g-to:var(--color-brand-600)}
+.to-brand-500{--g-to:var(--color-brand-500)}
+.from-gray-900{--g-from:#101828}.via-gray-dark{--g-via:#1a2231}.to-gray-900{--g-to:#101828}
+.from-gray-900\/70{--g-from:rgba(16,24,40,.7)}.via-transparent{--g-via:transparent}.to-transparent{--g-to:transparent}
+.dark .dark\:from-gray-900{--g-from:#101828}.dark .dark\:via-gray-dark{--g-via:#1a2231}.dark .dark\:to-gray-900{--g-to:#101828}
+.dark .dark\:from-brand-500\/40{--g-from:rgba(70,95,255,.4)}.dark .dark\:to-brand-500{--g-to:var(--color-brand-500)}
+
+/* ---- bg-white + alpha surfaces ---- */
+.bg-white{background-color:#fff}
+.bg-transparent{background-color:transparent}
+.bg-white\/70{background-color:rgba(255,255,255,.7)}.bg-white\/80{background-color:rgba(255,255,255,.8)}
+.bg-white\/90{background-color:rgba(255,255,255,.9)}.bg-white\/10{background-color:rgba(255,255,255,.1)}
+.bg-white\/20{background-color:rgba(255,255,255,.2)}.bg-white\/25{background-color:rgba(255,255,255,.25)}
+.bg-white\/30{background-color:rgba(255,255,255,.3)}.bg-white\/40{background-color:rgba(255,255,255,.4)}
+.bg-white\/5{background-color:rgba(255,255,255,.05)}
+.bg-gray-900\/50{background-color:rgba(16,24,40,.5)}.bg-gray-900\/60{background-color:rgba(16,24,40,.6)}
+.bg-gray-900\/70{background-color:rgba(16,24,40,.7)}.bg-gray-900\/80{background-color:rgba(16,24,40,.8)}
+.bg-gray-900\/40{background-color:rgba(16,24,40,.4)}
+.bg-gray-50\/40{background-color:rgba(249,250,251,.4)}.bg-gray-50\/60{background-color:rgba(249,250,251,.6)}
+.bg-brand-25{background-color:var(--c-brand-25)}.bg-brand-50\/40{background-color:rgba(236,243,255,.4)}
+.bg-brand-50\/60{background-color:rgba(236,243,255,.6)}
+.bg-warning-100\/60{background-color:rgba(254,240,199,.6)}.bg-brand-300\/40{background-color:rgba(156,185,255,.4)}
+.bg-brand-200\/40{background-color:rgba(194,214,255,.4)}
+
+/* ---- ring (focus-within & avatar borders) ---- */
+.ring-1{box-shadow:0 0 0 1px var(--ring-c,rgba(70,95,255,.3))}
+.ring-2{box-shadow:0 0 0 2px var(--ring-c,#fff)}
+.ring-4{box-shadow:0 0 0 4px var(--ring-c,rgba(70,95,255,.12))}
+.ring-white{--ring-c:#fff}
+.ring-brand-500\/30{--ring-c:rgba(70,95,255,.3)}
+.focus-within\:border-brand-300:focus-within{border-color:var(--color-brand-300)}
+.focus-within\:shadow-\[0_0_0_4px_rgba\(70\2c 95\2c 255\2c 0\.12\)\]:focus-within{box-shadow:0 0 0 4px rgba(70,95,255,.12)}
+
+/* ---- accordion / faq collapsible grid rows ---- */
+.grid-rows-\[1fr\]{grid-template-rows:1fr}.grid-rows-\[0fr\]{grid-template-rows:0fr}
+
+/* ---- group hover helpers (Tailwind group/named-group) ---- */
+.group:hover .group-hover\:opacity-100{opacity:1}
+.group:hover .group-hover\:scale-105{transform:scale(1.05)}
+.group:hover .group-hover\:scale-110{transform:scale(1.1)}
+.group\/handle:hover .group-hover\/handle\:bg-brand-400{background:var(--c-brand-400)}
+.group\/tooltip:hover .group-hover\/tooltip\:opacity-100,
+.group\/tooltip:focus-within .group-focus-within\/tooltip\:opacity-100{opacity:1}
+.supports-\[backdrop-filter\]\:bg-white\/80{background-color:rgba(255,255,255,.8)}
+
+/* ================================================================== */
+/* Foundation-specific resets / fixes (DESIGN.md requirements)         */
+/* ================================================================== */
+
+/* Foundation gives <ul>/<ol> bullets + margins — reset sidebar nav.    */
+.surface-sidebar ul{list-style:none;margin:0;padding:0}
+.surface-sidebar li{list-style:none}
+
+/* Foundation styles raw <button>; keep our utility-driven buttons flat */
+button{cursor:pointer}
+
+/* Foundation sets max-width on img/.thumbnail etc — keep utility sizing */
+img{max-width:100%;height:auto}
+
+/* ================================================================== */
+/* Hover variants (Tailwind hover:* used widely across the markup).    */
+/* Plain CSS so interactive states match the tailwind sibling.         */
+/* ================================================================== */
+
+/* background hovers */
+.hover\:bg-brand-50:hover{background:var(--color-brand-50)!important}
+.hover\:bg-brand-100:hover{background:var(--color-brand-100)!important}
+.hover\:bg-brand-600:hover{background:var(--color-brand-600)!important}
+.hover\:bg-success-600:hover{background:var(--c-success-600)!important}
+.hover\:bg-warning-600:hover{background:var(--c-warning-600)!important}
+.hover\:bg-error-50:hover{background:var(--c-error-50)!important}
+.hover\:bg-error-600:hover{background:var(--c-error-600)!important}
+.hover\:bg-blue-light-600:hover{background:var(--c-info-600)!important}
+.hover\:bg-gray-50:hover{background:var(--c-gray-50)!important}
+.hover\:bg-gray-100:hover{background:var(--c-gray-100)!important}
+.hover\:bg-gray-800:hover{background:var(--c-gray-800)!important}
+.hover\:bg-white\/20:hover{background:rgba(255,255,255,.2)!important}
+.hover\:bg-white\/5:hover{background:rgba(255,255,255,.05)!important}
+.hover\:bg-brand-500\/15:hover{background:rgba(70,95,255,.15)!important}
+.hover\:bg-brand-500\/20:hover{background:rgba(70,95,255,.2)!important}
+.hover\:bg-brand-500\/25:hover{background:rgba(70,95,255,.25)!important}
+.hover\:bg-brand-500\/5:hover{background:rgba(70,95,255,.05)!important}
+.hover\:bg-brand-50\/40:hover{background:rgba(236,243,255,.4)!important}
+.hover\:bg-error-500\/10:hover{background:rgba(240,68,56,.1)!important}
+.hover\:bg-error-500\/15:hover{background:rgba(240,68,56,.15)!important}
+.hover\:bg-gray-800\/50:hover{background:rgba(29,41,57,.5)!important}
+.hover\:bg-gray-800\/60:hover{background:rgba(29,41,57,.6)!important}
+
+/* text hovers */
+.hover\:text-heading:hover{color:var(--tx-text-heading)!important}
+.hover\:text-body:hover{color:var(--tx-text)!important}
+.hover\:text-brand-400:hover{color:var(--c-brand-400)!important}
+.hover\:text-brand-500:hover{color:var(--color-brand-500)!important}
+.hover\:text-brand-600:hover{color:var(--color-brand-600)!important}
+.hover\:text-error-500:hover{color:var(--c-error-500)!important}
+.hover\:text-error-600:hover{color:var(--c-error-600)!important}
+.hover\:text-warning-500:hover{color:var(--c-warning-500)!important}
+.hover\:text-brand-700:hover{color:var(--color-brand-700)!important}
+.hover\:text-gray-600:hover{color:var(--c-gray-600)!important}
+.hover\:text-gray-200:hover{color:var(--c-gray-200)!important}
+
+/* border hovers */
+.hover\:border-brand-300:hover{border-color:var(--c-brand-300)!important}
+.hover\:border-gray-300:hover{border-color:var(--c-gray-300)!important}
+.hover\:border-gray-700:hover{border-color:var(--c-gray-700)!important}
+
+/* transform / shadow / opacity / underline hovers */
+.hover\:scale-105:hover{transform:scale(1.05)}
+.hover\:scale-110:hover{transform:scale(1.1)}
+.hover\:-translate-y-1:hover{transform:translateY(-.25rem)}
+.hover\:shadow-theme-sm:hover{box-shadow:var(--shadow-theme-sm)}
+.hover\:shadow-theme-md:hover{box-shadow:var(--shadow-theme-md)}
+.hover\:shadow-theme-lg:hover{box-shadow:var(--shadow-theme-lg)}
+.hover\:opacity-100:hover{opacity:1}
+.hover\:underline:hover{text-decoration:underline}
+
+/* dark-mode hover variants (scoped under :root.dark) */
+.dark .dark\:hover\:bg-gray-800:hover{background:var(--c-gray-800)!important}
+.dark .dark\:hover\:bg-gray-800\/50:hover{background:rgba(29,41,57,.5)!important}
+.dark .dark\:hover\:bg-gray-800\/60:hover{background:rgba(29,41,57,.6)!important}
+.dark .dark\:hover\:bg-white\/5:hover{background:rgba(255,255,255,.05)!important}
+.dark .dark\:hover\:bg-brand-500\/15:hover{background:rgba(70,95,255,.15)!important}
+.dark .dark\:hover\:bg-brand-500\/20:hover{background:rgba(70,95,255,.2)!important}
+.dark .dark\:hover\:bg-brand-500\/25:hover{background:rgba(70,95,255,.25)!important}
+.dark .dark\:hover\:bg-brand-500\/5:hover{background:rgba(70,95,255,.05)!important}
+.dark .dark\:hover\:bg-error-500\/10:hover{background:rgba(240,68,56,.1)!important}
+.dark .dark\:hover\:bg-error-500\/15:hover{background:rgba(240,68,56,.15)!important}
+.dark .dark\:hover\:text-heading:hover{color:var(--tx-text-heading)!important}
+.dark .dark\:hover\:text-brand-400:hover{color:var(--c-brand-400)!important}
+.dark .dark\:hover\:text-gray-200:hover{color:var(--c-gray-200)!important}
